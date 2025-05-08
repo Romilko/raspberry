@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cat-fact-pod
+  namespace: default
+  labels:
+    app: cat-fact-pod
+spec:
+  containers:
+  - name: cat-fact-container
+    image: romilko/cat-fact-bot:latest
+    ports:
+    - containerPort: 8080
