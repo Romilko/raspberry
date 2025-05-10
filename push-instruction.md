@@ -3,4 +3,4 @@ Image build and push:
  - docker push romilko/image:tag
 
 Run pod:
-  - kubectl apply -f <github raw url>
+  - kubectl apply -f "github raw url"
