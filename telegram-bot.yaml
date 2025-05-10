@@ -9,5 +9,8 @@ spec:
   containers:
   - name: telegram-bot-container
     image: romilko/telegram-bot:latest
+    envFrom:
+    - secretRef:
+        name: bot-token
     ports:
     - containerPort: 8080
