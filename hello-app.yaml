@@ -37,7 +37,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: hello-app.k8s.cux5cl-stage-1.salt.x5.ru
+    - host: hello-app.romilko.ru
       http:
         paths:
           - backend:
