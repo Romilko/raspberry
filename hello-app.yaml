@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-app-pod
+  namespace: default
+  labels:
+    app: hello-app-pod
+spec:
+  containers:
+  - name: hello-app-container
+    image: romilko/hello-app:latest
+    ports:
+    - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-app-service
+  namespace: default
+  labels:
+    app: hello-app-service
+spec:
+  selector:
+    app: hello-app-pod
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  labels:
+    app: hello-app-ingress
+  name: hello-app-ingress
+  namespace: default
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: hello-app.k8s.cux5cl-stage-1.salt.x5.ru
+      http:
+        paths:
+          - backend:
+              service:
+                name: hello-app-service
+                port:
+                  number: 8080
+            path: /
+            pathType: ImplementationSpecific
