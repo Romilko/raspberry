@@ -35,7 +35,7 @@ metadata:
   name: hello-app-ingress
   namespace: default
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   rules:
     - host: hello-app.romilko.ru
       http:
