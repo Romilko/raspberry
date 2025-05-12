@@ -25,7 +25,7 @@ spec:
       volumes:
         - name: minio-data
           persistentVolumeClaim:
-          claimName: minio-volume-claim
+            claimName: minio-volume-claim
 ---
 apiVersion: v1
 kind: PersistentVolume
