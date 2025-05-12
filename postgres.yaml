@@ -17,7 +17,7 @@ spec:
         image: postgres:16
         envFrom:
         - secretRef:
-          name: postrgres-secret
+          name: postgres-secret
         ports:
         - containerPort: 5432
         volumeMounts:
