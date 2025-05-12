@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: minio
-    image: quay.io/minio/minio:RELEASE.2025-04-22T22-12-26Z-arm64
+    image: dl.min.io/server/minio/release/linux-amd64/archive/minio-20250422221226.0.0-1.x86_64.rpm
     ports:
     - containerPort: 8080
 ---
